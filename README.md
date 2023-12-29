@@ -12,6 +12,8 @@ This repository contains an Nx workspace named "emartnx" with Node.js projects.
 
 "yarn create nx-workspace" OR
 
+```bash
+
 ## STEP-2: Adding Nx to an Existing Repository
 
 cd emartnx
