@@ -78,6 +78,15 @@ This will generate only the main application without the corresponding end-to-en
 
 
 
+## STEP-10: npx nx test emartnx-first
+
+```bash
+
+npx nx test emartnx-first
+
+```
+
+
 
 
 
