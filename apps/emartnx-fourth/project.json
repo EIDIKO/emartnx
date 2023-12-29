@@ -1,0 +1,67 @@
+{
+  "name": "emartnx-fourth",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/emartnx-fourth/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/emartnx-fourth",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/emartnx-fourth/src/main.ts",
+        "tsConfig": "apps/emartnx-fourth/tsconfig.app.json",
+        "assets": ["apps/emartnx-fourth/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "emartnx-fourth:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "emartnx-fourth:build:development"
+        },
+        "production": {
+          "buildTarget": "emartnx-fourth:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/emartnx-fourth/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
