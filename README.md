@@ -16,23 +16,35 @@ This repository contains an Nx workspace named "emartnx" with Node.js projects.
 
 ## STEP-2: Adding Nx to an Existing Repository
 
+```bash
 cd emartnx
 
 "npx nx@latest init"
+```
+
 
 ## STEP-3: Add New Project
+
+
+```bash
 
 "npx nx generate @nrwl/node:application emartnx-one --project=emartnx"
 "npx nx generate @nrwl/node:application emartnx-two --project=emartnx"
 "npx nx generate @nrwl/node:application emartnx-three --project=emartnx"
 "npx nx generate @nrwl/node:application emartnx-four --project=emartnx"
 
+```
+
+
 ## STEP-4: Skipping Tests in adding new project
 
 The command you provided:
 
+```bash
+
 "npx nx generate @nrwl/node:application emartnx-one --project=emartnx"
 
+```
 
 is used to generate a new Node.js application named "emartnx-one" within the Nx workspace named "emartnx."
 
@@ -40,7 +52,11 @@ The two folders you mentioned, "emartnx-one" and "emartnx-one-e2e," are typical 
 
 If you want to skip the generation of e2e tests when generating a new application, you can use the --skipTests option:
 
+```bash
+
 "npx nx generate @nrwl/node:application emartnx-one --project=emartnx --skipTests"
+
+```
 
 This will generate only the main application without the corresponding end-to-end tests. Adjust the command according to your preferences and project requirements.
 
